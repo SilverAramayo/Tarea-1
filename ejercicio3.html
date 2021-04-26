@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Tecnologia Web - Portal de Asignaciones | Nombre | UPDS -Cbba.</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <form action="">
+            <p>Ingrese la cantidad de numeros primos a mostrar:</p>
+            <input id="numero1" type="text">
+            <p>los num eros primos son:</p>
+            <input id="resultado" type="text" readonly>
+            <input type="button" class="btn" onclick="Potencia()" value="Resultado">
+        </form>
+    </div>
+        <script>
+            function Potencia(numero1,numero2)
+            {
+                var num1 =parseFloat(document.getElementById('numero1').value);
+                var numeroPrimos=[];
+                var numero=2;
+                while (num1> numeroPrimos.length)
+                {
+                    if(esPrimo(numero))
+                    {
+                        numeroPrimos.push(numero);
+                        numero=numero +1;
+                    }
+                    else
+                    {
+                        numero=numero +1; 
+                    }
+                }
+                
+                function esPrimo(num) 
+                {
+                   
+                    for (var i = 2; i < num; i++  )
+                    {
+                        if(num%i==0)
+                             return false;
+                    }
+                    return true;    
+                }
+
+                document.getElementById('resultado').value=numeroPrimos;
+
+            }
+        </script>
+</html>
